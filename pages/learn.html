@@ -1,0 +1,1201 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Learn | Learnova</title>
+
+    <link rel="stylesheet"
+          href="../css/style.css">
+
+    <style>
+
+        /* ==============================
+           LEARN PAGE
+        ============================== */
+
+        .learn-page {
+            min-height: 100vh;
+            background: #f8f9fd;
+        }
+
+
+        /* ==============================
+           NAVBAR
+        ============================== */
+
+        .learn-nav {
+            height: 72px;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            padding: 0 7%;
+
+            background: white;
+
+            border-bottom: 1px solid #e8eaf0;
+        }
+
+
+        .learn-logo {
+            display: flex;
+            align-items: center;
+
+            gap: 10px;
+
+            color: #172033;
+
+            text-decoration: none;
+
+            font-size: 17px;
+            font-weight: 700;
+        }
+
+
+        .learn-logo-icon {
+            width: 36px;
+            height: 36px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            background: #635bff;
+
+            color: white;
+
+            border-radius: 10px;
+        }
+
+
+        .learn-nav-links {
+            display: flex;
+
+            align-items: center;
+
+            gap: 25px;
+        }
+
+
+        .learn-nav-links a {
+            color: #697386;
+
+            text-decoration: none;
+
+            font-size: 13px;
+        }
+
+
+        .learn-nav-links a.active {
+            color: #635bff;
+
+            font-weight: 600;
+        }
+
+
+        .learn-profile {
+            width: 36px;
+            height: 36px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            border-radius: 50%;
+
+            background: #635bff;
+
+            color: white;
+
+            font-size: 13px;
+            font-weight: 600;
+        }
+
+
+        /* ==============================
+           MAIN
+        ============================== */
+
+        .learn-content {
+            width: 86%;
+            max-width: 1250px;
+
+            margin: auto;
+
+            padding: 45px 0;
+        }
+
+
+        .learn-heading {
+            margin-bottom: 30px;
+        }
+
+
+        .learn-heading h1 {
+            margin: 0 0 8px;
+
+            color: #172033;
+
+            font-size: 30px;
+        }
+
+
+        .learn-heading p {
+            margin: 0;
+
+            color: #697386;
+
+            font-size: 14px;
+        }
+
+
+        /* ==============================
+           SEARCH
+        ============================== */
+
+        .search-box {
+            display: flex;
+
+            align-items: center;
+
+            gap: 10px;
+
+            margin-bottom: 28px;
+
+            background: white;
+
+            border: 1px solid #e1e4ec;
+
+            border-radius: 11px;
+
+            padding: 5px;
+
+            max-width: 650px;
+        }
+
+
+        .search-icon {
+            padding-left: 12px;
+
+            color: #8992a3;
+        }
+
+
+        .search-box input {
+            flex: 1;
+
+            border: none;
+
+            outline: none;
+
+            padding: 11px;
+
+            font-size: 13px;
+
+            font-family: inherit;
+        }
+
+
+        .search-button {
+            border: none;
+
+            background: #635bff;
+
+            color: white;
+
+            padding: 11px 20px;
+
+            border-radius: 8px;
+
+            cursor: pointer;
+
+            font-weight: 600;
+        }
+
+
+        /* ==============================
+           CATEGORIES
+        ============================== */
+
+        .category-section {
+            margin-bottom: 35px;
+        }
+
+
+        .category-section h2 {
+            font-size: 18px;
+
+            margin-bottom: 15px;
+        }
+
+
+        .category-list {
+            display: flex;
+
+            flex-wrap: wrap;
+
+            gap: 10px;
+        }
+
+
+        .category-btn {
+            border: 1px solid #dfe2ea;
+
+            background: white;
+
+            color: #697386;
+
+            padding: 9px 16px;
+
+            border-radius: 20px;
+
+            cursor: pointer;
+
+            font-size: 12px;
+
+            transition: 0.2s;
+        }
+
+
+        .category-btn:hover,
+        .category-btn.active {
+            background: #635bff;
+
+            border-color: #635bff;
+
+            color: white;
+        }
+
+
+        /* ==============================
+           RESOURCE HEADER
+        ============================== */
+
+        .resource-header {
+            display: flex;
+
+            align-items: center;
+            justify-content: space-between;
+
+            margin-bottom: 18px;
+        }
+
+
+        .resource-header h2 {
+            margin: 0;
+
+            font-size: 20px;
+        }
+
+
+        .resource-count {
+            color: #8992a3;
+
+            font-size: 12px;
+        }
+
+
+        /* ==============================
+           RESOURCE GRID
+        ============================== */
+
+        .resource-grid {
+            display: grid;
+
+            grid-template-columns:
+                repeat(3, 1fr);
+
+            gap: 18px;
+        }
+
+
+        .resource-card {
+            background: white;
+
+            border: 1px solid #e3e6ee;
+
+            border-radius: 14px;
+
+            overflow: hidden;
+
+            transition: 0.25s;
+        }
+
+
+        .resource-card:hover {
+            transform: translateY(-4px);
+
+            box-shadow:
+                0 12px 30px rgba(35,40,70,0.08);
+
+            border-color: #d8d5ff;
+        }
+
+
+        .resource-top {
+            height: 125px;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            background: #f0efff;
+
+            font-size: 42px;
+        }
+
+
+        .resource-body {
+            padding: 20px;
+        }
+
+
+        .resource-type {
+            display: inline-block;
+
+            padding: 4px 8px;
+
+            background: #f0efff;
+
+            color: #635bff;
+
+            border-radius: 5px;
+
+            font-size: 10px;
+
+            font-weight: 600;
+
+            margin-bottom: 10px;
+        }
+
+
+        .resource-body h3 {
+            margin: 0 0 7px;
+
+            font-size: 16px;
+
+            color: #172033;
+        }
+
+
+        .resource-body p {
+            margin: 0 0 15px;
+
+            color: #697386;
+
+            font-size: 12px;
+
+            line-height: 1.6;
+        }
+
+
+        .resource-footer {
+            display: flex;
+
+            align-items: center;
+            justify-content: space-between;
+        }
+
+
+        .resource-author {
+            color: #8992a3;
+
+            font-size: 10px;
+        }
+
+
+        .view-resource {
+            border: none;
+
+            background: #635bff;
+
+            color: white;
+
+            padding: 8px 13px;
+
+            border-radius: 7px;
+
+            cursor: pointer;
+
+            font-size: 11px;
+
+            font-weight: 600;
+        }
+
+
+        /* ==============================
+           NO RESULTS
+        ============================== */
+
+        .no-results {
+            display: none;
+
+            text-align: center;
+
+            padding: 50px 20px;
+
+            color: #697386;
+        }
+
+
+        .no-results h3 {
+            color: #172033;
+
+            margin-bottom: 8px;
+        }
+
+
+        /* ==============================
+           RESPONSIVE
+        ============================== */
+
+        @media (max-width: 900px) {
+
+            .resource-grid {
+                grid-template-columns:
+                    repeat(2, 1fr);
+            }
+
+            .learn-nav-links {
+                display: none;
+            }
+
+        }
+
+
+        @media (max-width: 600px) {
+
+            .learn-content {
+                width: 90%;
+            }
+
+            .resource-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .search-box {
+                max-width: 100%;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+<div class="learn-page">
+
+
+    <!-- ==========================
+         NAVIGATION
+    =========================== -->
+
+    <header class="learn-nav">
+
+        <a href="dashboard.html"
+           class="learn-logo">
+
+            <span class="learn-logo-icon">
+                L
+            </span>
+
+            Learnova
+
+        </a>
+
+
+        <nav class="learn-nav-links">
+
+            <a href="dashboard.html">
+                Dashboard
+            </a>
+
+            <a href="learn.html"
+               class="active">
+                Learn
+            </a>
+
+            <a href="#">
+                Teach
+            </a>
+
+            <a href="#">
+                Opportunities
+            </a>
+
+            <a href="#">
+                Marketplace
+            </a>
+
+        </nav>
+
+
+        <div class="learn-profile">
+            S
+        </div>
+
+    </header>
+
+
+
+    <!-- ==========================
+         MAIN CONTENT
+    =========================== -->
+
+    <main class="learn-content">
+
+
+        <!-- HEADING -->
+
+        <section class="learn-heading">
+
+            <h1>
+                Learn & Explore 📚
+            </h1>
+
+            <p>
+                Discover courses, study materials,
+                assignments and previous year questions.
+            </p>
+
+        </section>
+
+
+
+        <!-- ==========================
+             SEARCH
+        =========================== -->
+
+        <div class="search-box">
+
+            <span class="search-icon">
+                🔍
+            </span>
+
+            <input
+                type="text"
+                id="searchInput"
+                placeholder="Search courses, subjects or resources..."
+            >
+
+            <button
+                class="search-button"
+                onclick="searchResources()">
+
+                Search
+
+            </button>
+
+        </div>
+
+
+
+        <!-- ==========================
+             CATEGORIES
+        =========================== -->
+
+        <section class="category-section">
+
+            <h2>
+                Browse by Category
+            </h2>
+
+
+            <div class="category-list">
+
+                <button
+                    class="category-btn active"
+                    onclick="filterResources('all', this)">
+
+                    All
+
+                </button>
+
+
+                <button
+                    class="category-btn"
+                    onclick="filterResources('course', this)">
+
+                    Courses
+
+                </button>
+
+
+                <button
+                    class="category-btn"
+                    onclick="filterResources('material', this)">
+
+                    Study Materials
+
+                </button>
+
+
+                <button
+                    class="category-btn"
+                    onclick="filterResources('assignment', this)">
+
+                    Assignments
+
+                </button>
+
+
+                <button
+                    class="category-btn"
+                    onclick="filterResources('question', this)">
+
+                    Previous Year Questions
+
+                </button>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- ==========================
+             RESOURCES
+        =========================== -->
+
+        <section>
+
+
+            <div class="resource-header">
+
+                <h2>
+                    Featured Resources
+                </h2>
+
+                <span
+                    class="resource-count"
+                    id="resourceCount">
+
+                    6 resources
+
+                </span>
+
+            </div>
+
+
+
+            <div
+                class="resource-grid"
+                id="resourceGrid">
+
+
+                <!-- RESOURCE 1 -->
+
+                <article
+                    class="resource-card"
+                    data-type="course"
+                    data-title="Web Development">
+
+                    <div class="resource-top">
+                        💻
+                    </div>
+
+                    <div class="resource-body">
+
+                        <span class="resource-type">
+                            COURSE
+                        </span>
+
+                        <h3>
+                            Web Development
+                        </h3>
+
+                        <p>
+                            Learn HTML, CSS and JavaScript
+                            from the basics.
+                        </p>
+
+                        <div class="resource-footer">
+
+                            <span class="resource-author">
+                                Learnova Resources
+                            </span>
+
+                            <button
+                                class="view-resource"
+                                onclick="openResource('Web Development')">
+
+                                View
+
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                </article>
+
+
+
+                <!-- RESOURCE 2 -->
+
+                <article
+                    class="resource-card"
+                    data-type="material"
+                    data-title="Python Programming">
+
+                    <div class="resource-top">
+                        🐍
+                    </div>
+
+                    <div class="resource-body">
+
+                        <span class="resource-type">
+                            STUDY MATERIAL
+                        </span>
+
+                        <h3>
+                            Python Programming
+                        </h3>
+
+                        <p>
+                            Notes and examples for
+                            learning Python programming.
+                        </p>
+
+                        <div class="resource-footer">
+
+                            <span class="resource-author">
+                                Learnova Resources
+                            </span>
+
+                            <button
+                                class="view-resource"
+                                onclick="openResource('Python Programming')">
+
+                                View
+
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                </article>
+
+
+
+                <!-- RESOURCE 3 -->
+
+                <article
+                    class="resource-card"
+                    data-type="assignment"
+                    data-title="Database Management">
+
+                    <div class="resource-top">
+                        🗄️
+                    </div>
+
+                    <div class="resource-body">
+
+                        <span class="resource-type">
+                            ASSIGNMENT
+                        </span>
+
+                        <h3>
+                            Database Management
+                        </h3>
+
+                        <p>
+                            Practice questions and
+                            assignments on DBMS.
+                        </p>
+
+                        <div class="resource-footer">
+
+                            <span class="resource-author">
+                                Learnova Resources
+                            </span>
+
+                            <button
+                                class="view-resource"
+                                onclick="openResource('Database Management')">
+
+                                View
+
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                </article>
+
+
+
+                <!-- RESOURCE 4 -->
+
+                <article
+                    class="resource-card"
+                    data-type="question"
+                    data-title="Computer Networks">
+
+                    <div class="resource-top">
+                        🌐
+                    </div>
+
+                    <div class="resource-body">
+
+                        <span class="resource-type">
+                            PREVIOUS YEAR
+                        </span>
+
+                        <h3>
+                            Computer Networks
+                        </h3>
+
+                        <p>
+                            Previous year examination
+                            questions for practice.
+                        </p>
+
+                        <div class="resource-footer">
+
+                            <span class="resource-author">
+                                Learnova Resources
+                            </span>
+
+                            <button
+                                class="view-resource"
+                                onclick="openResource('Computer Networks')">
+
+                                View
+
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                </article>
+
+
+
+                <!-- RESOURCE 5 -->
+
+                <article
+                    class="resource-card"
+                    data-type="course"
+                    data-title="Data Structures">
+
+                    <div class="resource-top">
+                        🧩
+                    </div>
+
+                    <div class="resource-body">
+
+                        <span class="resource-type">
+                            COURSE
+                        </span>
+
+                        <h3>
+                            Data Structures
+                        </h3>
+
+                        <p>
+                            Understand arrays, linked lists,
+                            stacks and queues.
+                        </p>
+
+                        <div class="resource-footer">
+
+                            <span class="resource-author">
+                                Learnova Resources
+                            </span>
+
+                            <button
+                                class="view-resource"
+                                onclick="openResource('Data Structures')">
+
+                                View
+
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                </article>
+
+
+
+                <!-- RESOURCE 6 -->
+
+                <article
+                    class="resource-card"
+                    data-type="material"
+                    data-title="Computer Science Notes">
+
+                    <div class="resource-top">
+                        📖
+                    </div>
+
+                    <div class="resource-body">
+
+                        <span class="resource-type">
+                            STUDY MATERIAL
+                        </span>
+
+                        <h3>
+                            Computer Science Notes
+                        </h3>
+
+                        <p>
+                            Useful notes and reference
+                            materials for CS students.
+                        </p>
+
+                        <div class="resource-footer">
+
+                            <span class="resource-author">
+                                Learnova Resources
+                            </span>
+
+                            <button
+                                class="view-resource"
+                                onclick="openResource('Computer Science Notes')">
+
+                                View
+
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                </article>
+
+
+            </div>
+
+
+
+            <!-- NO RESULTS -->
+
+            <div
+                class="no-results"
+                id="noResults">
+
+                <h3>
+                    No resources found
+                </h3>
+
+                <p>
+                    Try another search or category.
+                </p>
+
+            </div>
+
+
+        </section>
+
+
+    </main>
+
+</div>
+
+
+
+<script>
+
+    /* ==============================
+       FILTER RESOURCES
+    ============================== */
+
+    function filterResources(type, button) {
+
+        const cards =
+            document.querySelectorAll(
+                ".resource-card"
+            );
+
+        const buttons =
+            document.querySelectorAll(
+                ".category-btn"
+            );
+
+
+        buttons.forEach(function(btn) {
+
+            btn.classList.remove("active");
+
+        });
+
+
+        button.classList.add("active");
+
+
+        let visibleCount = 0;
+
+
+        cards.forEach(function(card) {
+
+            const cardType =
+                card.getAttribute("data-type");
+
+
+            if (
+                type === "all" ||
+                cardType === type
+            ) {
+
+                card.style.display = "block";
+
+                visibleCount++;
+
+            } else {
+
+                card.style.display = "none";
+
+            }
+
+        });
+
+
+        document.getElementById(
+            "resourceCount"
+        ).textContent =
+            visibleCount + " resources";
+
+
+        document.getElementById(
+            "noResults"
+        ).style.display =
+            visibleCount === 0
+                ? "block"
+                : "none";
+
+    }
+
+
+
+    /* ==============================
+       SEARCH RESOURCES
+    ============================== */
+
+    function searchResources() {
+
+        const searchText =
+            document
+                .getElementById("searchInput")
+                .value
+                .toLowerCase()
+                .trim();
+
+
+        const cards =
+            document.querySelectorAll(
+                ".resource-card"
+            );
+
+
+        let visibleCount = 0;
+
+
+        cards.forEach(function(card) {
+
+            const title =
+                card
+                    .getAttribute("data-title")
+                    .toLowerCase();
+
+
+            const description =
+                card
+                    .querySelector("p")
+                    .textContent
+                    .toLowerCase();
+
+
+            if (
+                title.includes(searchText) ||
+                description.includes(searchText)
+            ) {
+
+                card.style.display = "block";
+
+                visibleCount++;
+
+            } else {
+
+                card.style.display = "none";
+
+            }
+
+        });
+
+
+        document.getElementById(
+            "resourceCount"
+        ).textContent =
+            visibleCount + " resources";
+
+
+        document.getElementById(
+            "noResults"
+        ).style.display =
+            visibleCount === 0
+                ? "block"
+                : "none";
+
+    }
+
+
+
+    /* ==============================
+       VIEW RESOURCE
+    ============================== */
+
+    function openResource(resourceName) {
+
+        alert(
+            resourceName +
+            " will open here when we connect the resource system."
+        );
+
+    }
+
+
+
+    /* ==============================
+       ENTER KEY SEARCH
+    ============================== */
+
+    document
+        .getElementById("searchInput")
+        .addEventListener(
+            "keypress",
+            function(event) {
+
+                if (event.key === "Enter") {
+
+                    searchResources();
+
+                }
+
+            }
+        );
+
+</script>
+
+
+</body>
+
+</html>

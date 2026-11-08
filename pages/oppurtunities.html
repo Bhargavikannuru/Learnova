@@ -1,0 +1,1339 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Opportunities | Learnova</title>
+
+    <link rel="stylesheet"
+          href="../css/style.css">
+
+    <style>
+
+        /* =========================
+           PAGE
+        ========================= */
+
+        .opportunity-page {
+            min-height: 100vh;
+            background: #f8f9fd;
+        }
+
+
+        /* =========================
+           NAVBAR
+        ========================= */
+
+        .opportunity-nav {
+            height: 72px;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            padding: 0 7%;
+
+            background: white;
+
+            border-bottom: 1px solid #e8eaf0;
+        }
+
+
+        .opportunity-logo {
+            display: flex;
+            align-items: center;
+
+            gap: 10px;
+
+            text-decoration: none;
+
+            color: #172033;
+
+            font-size: 17px;
+            font-weight: 700;
+        }
+
+
+        .opportunity-logo-icon {
+            width: 36px;
+            height: 36px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            background: #635bff;
+
+            color: white;
+
+            border-radius: 10px;
+        }
+
+
+        .opportunity-nav-links {
+            display: flex;
+
+            align-items: center;
+
+            gap: 25px;
+        }
+
+
+        .opportunity-nav-links a {
+            text-decoration: none;
+
+            color: #697386;
+
+            font-size: 13px;
+        }
+
+
+        .opportunity-nav-links a.active {
+            color: #635bff;
+
+            font-weight: 600;
+        }
+
+
+        .opportunity-profile {
+            width: 36px;
+            height: 36px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            border-radius: 50%;
+
+            background: #635bff;
+
+            color: white;
+
+            font-size: 13px;
+            font-weight: 600;
+        }
+
+
+        /* =========================
+           CONTENT
+        ========================= */
+
+        .opportunity-content {
+            width: 86%;
+            max-width: 1250px;
+
+            margin: auto;
+
+            padding: 45px 0;
+        }
+
+
+        .opportunity-heading {
+            margin-bottom: 30px;
+        }
+
+
+        .opportunity-heading h1 {
+            margin: 0 0 8px;
+
+            color: #172033;
+
+            font-size: 30px;
+        }
+
+
+        .opportunity-heading p {
+            margin: 0;
+
+            color: #697386;
+
+            font-size: 14px;
+        }
+
+
+        /* =========================
+           SEARCH
+        ========================= */
+
+        .opportunity-search {
+            display: flex;
+
+            align-items: center;
+
+            gap: 10px;
+
+            background: white;
+
+            border: 1px solid #e1e4ec;
+
+            border-radius: 11px;
+
+            padding: 5px;
+
+            margin-bottom: 25px;
+        }
+
+
+        .opportunity-search input {
+            flex: 1;
+
+            border: none;
+
+            outline: none;
+
+            padding: 12px;
+
+            font-family: inherit;
+
+            font-size: 13px;
+        }
+
+
+        .opportunity-search button {
+            border: none;
+
+            background: #635bff;
+
+            color: white;
+
+            padding: 11px 20px;
+
+            border-radius: 8px;
+
+            cursor: pointer;
+
+            font-weight: 600;
+        }
+
+
+        /* =========================
+           FILTERS
+        ========================= */
+
+        .filter-section {
+            display: flex;
+
+            align-items: center;
+
+            justify-content: space-between;
+
+            gap: 15px;
+
+            margin-bottom: 30px;
+        }
+
+
+        .filter-list {
+            display: flex;
+
+            flex-wrap: wrap;
+
+            gap: 9px;
+        }
+
+
+        .filter-btn {
+            border: 1px solid #dfe2ea;
+
+            background: white;
+
+            color: #697386;
+
+            padding: 9px 16px;
+
+            border-radius: 20px;
+
+            cursor: pointer;
+
+            font-size: 12px;
+
+            transition: 0.2s;
+        }
+
+
+        .filter-btn:hover,
+        .filter-btn.active {
+            background: #635bff;
+
+            border-color: #635bff;
+
+            color: white;
+        }
+
+
+        .opportunity-count {
+            color: #8992a3;
+
+            font-size: 12px;
+
+            white-space: nowrap;
+        }
+
+
+        /* =========================
+           CARDS
+        ========================= */
+
+        .opportunity-grid {
+            display: grid;
+
+            grid-template-columns:
+                repeat(2, 1fr);
+
+            gap: 18px;
+        }
+
+
+        .opportunity-card {
+            background: white;
+
+            border: 1px solid #e3e6ee;
+
+            border-radius: 14px;
+
+            padding: 22px;
+
+            transition: 0.25s;
+        }
+
+
+        .opportunity-card:hover {
+            transform: translateY(-3px);
+
+            box-shadow:
+                0 12px 30px rgba(35,40,70,0.08);
+
+            border-color: #d8d5ff;
+        }
+
+
+        .opportunity-top {
+            display: flex;
+
+            justify-content: space-between;
+
+            align-items: flex-start;
+
+            gap: 15px;
+
+            margin-bottom: 15px;
+        }
+
+
+        .company-icon {
+            width: 48px;
+            height: 48px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            background: #f0efff;
+
+            border-radius: 10px;
+
+            font-size: 22px;
+        }
+
+
+        .opportunity-type {
+            padding: 5px 9px;
+
+            border-radius: 6px;
+
+            background: #f0efff;
+
+            color: #635bff;
+
+            font-size: 10px;
+
+            font-weight: 700;
+        }
+
+
+        .opportunity-card h2 {
+            margin: 0 0 6px;
+
+            font-size: 17px;
+
+            color: #172033;
+        }
+
+
+        .company-name {
+            margin: 0 0 12px;
+
+            color: #697386;
+
+            font-size: 12px;
+        }
+
+
+        .opportunity-description {
+            color: #697386;
+
+            font-size: 12px;
+
+            line-height: 1.6;
+
+            margin-bottom: 17px;
+        }
+
+
+        .opportunity-details {
+            display: flex;
+
+            flex-wrap: wrap;
+
+            gap: 8px;
+
+            margin-bottom: 18px;
+        }
+
+
+        .detail-tag {
+            padding: 6px 9px;
+
+            background: #fafaff;
+
+            border: 1px solid #eeeeF8;
+
+            border-radius: 6px;
+
+            color: #697386;
+
+            font-size: 10px;
+        }
+
+
+        .opportunity-bottom {
+            display: flex;
+
+            align-items: center;
+
+            justify-content: space-between;
+
+            border-top: 1px solid #f0f1f5;
+
+            padding-top: 15px;
+        }
+
+
+        .posted-date {
+            color: #8992a3;
+
+            font-size: 10px;
+        }
+
+
+        .apply-btn {
+            border: none;
+
+            background: #635bff;
+
+            color: white;
+
+            padding: 9px 15px;
+
+            border-radius: 7px;
+
+            cursor: pointer;
+
+            font-size: 11px;
+
+            font-weight: 600;
+        }
+
+
+        /* =========================
+           NO RESULTS
+        ========================= */
+
+        .opportunity-no-results {
+            display: none;
+
+            text-align: center;
+
+            padding: 55px 20px;
+
+            color: #697386;
+        }
+
+
+        .opportunity-no-results h2 {
+            color: #172033;
+
+            font-size: 18px;
+
+            margin-bottom: 7px;
+        }
+
+
+        /* =========================
+           RESPONSIVE
+        ========================= */
+
+        @media (max-width: 900px) {
+
+            .opportunity-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .opportunity-nav-links {
+                display: none;
+            }
+
+        }
+
+
+        @media (max-width: 600px) {
+
+            .opportunity-content {
+                width: 90%;
+            }
+
+            .filter-section {
+                align-items: flex-start;
+
+                flex-direction: column;
+            }
+
+            .opportunity-search {
+                width: 100%;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+<div class="opportunity-page">
+
+
+    <!-- =========================
+         NAVBAR
+    ========================== -->
+
+    <header class="opportunity-nav">
+
+        <a href="dashboard.html"
+           class="opportunity-logo">
+
+            <span class="opportunity-logo-icon">
+                L
+            </span>
+
+            Learnova
+
+        </a>
+
+
+        <nav class="opportunity-nav-links">
+
+            <a href="dashboard.html">
+                Dashboard
+            </a>
+
+            <a href="learn.html">
+                Learn
+            </a>
+
+            <a href="teach.html">
+                Teach
+            </a>
+
+            <a href="opportunities.html"
+               class="active">
+                Opportunities
+            </a>
+
+            <a href="#">
+                Marketplace
+            </a>
+
+        </nav>
+
+
+        <div class="opportunity-profile">
+            S
+        </div>
+
+    </header>
+
+
+
+    <!-- =========================
+         MAIN
+    ========================== -->
+
+    <main class="opportunity-content">
+
+
+        <!-- HEADING -->
+
+        <section class="opportunity-heading">
+
+            <h1>
+                Discover Opportunities 💼
+            </h1>
+
+            <p>
+                Find internships, part-time jobs and
+                student-friendly opportunities.
+            </p>
+
+        </section>
+
+
+
+        <!-- SEARCH -->
+
+        <div class="opportunity-search">
+
+            <span>
+                🔍
+            </span>
+
+            <input
+                type="text"
+                id="opportunitySearch"
+                placeholder="Search by role, company or skill..."
+            >
+
+            <button onclick="searchOpportunities()">
+                Search
+            </button>
+
+        </div>
+
+
+
+        <!-- FILTER -->
+
+        <section class="filter-section">
+
+            <div class="filter-list">
+
+
+                <button
+                    class="filter-btn active"
+                    onclick="filterOpportunities('all', this)">
+
+                    All
+
+                </button>
+
+
+                <button
+                    class="filter-btn"
+                    onclick="filterOpportunities('internship', this)">
+
+                    Internships
+
+                </button>
+
+
+                <button
+                    class="filter-btn"
+                    onclick="filterOpportunities('part-time', this)">
+
+                    Part-time Jobs
+
+                </button>
+
+
+                <button
+                    class="filter-btn"
+                    onclick="filterOpportunities('remote', this)">
+
+                    Remote
+
+                </button>
+
+
+                <button
+                    class="filter-btn"
+                    onclick="filterOpportunities('technology', this)">
+
+                    Technology
+
+                </button>
+
+
+            </div>
+
+
+            <span
+                class="opportunity-count"
+                id="opportunityCount">
+
+                6 opportunities
+
+            </span>
+
+        </section>
+
+
+
+        <!-- =========================
+             OPPORTUNITY CARDS
+        ========================== -->
+
+        <section>
+
+            <div
+                class="opportunity-grid"
+                id="opportunityGrid">
+
+
+                <!-- CARD 1 -->
+
+                <article
+                    class="opportunity-card"
+                    data-type="internship technology"
+                    data-search="frontend developer internship web development">
+
+                    <div class="opportunity-top">
+
+                        <div class="company-icon">
+                            💻
+                        </div>
+
+                        <span class="opportunity-type">
+                            INTERNSHIP
+                        </span>
+
+                    </div>
+
+
+                    <h2>
+                        Frontend Developer Intern
+                    </h2>
+
+                    <p class="company-name">
+                        Tech Solutions
+                    </p>
+
+
+                    <p class="opportunity-description">
+                        Work on web interfaces and learn
+                        modern frontend development.
+                    </p>
+
+
+                    <div class="opportunity-details">
+
+                        <span class="detail-tag">
+                            📍 Remote
+                        </span>
+
+                        <span class="detail-tag">
+                            ⏱ 3 Months
+                        </span>
+
+                        <span class="detail-tag">
+                            💻 HTML / CSS / JS
+                        </span>
+
+                    </div>
+
+
+                    <div class="opportunity-bottom">
+
+                        <span class="posted-date">
+                            Posted 2 days ago
+                        </span>
+
+                        <button
+                            class="apply-btn"
+                            onclick="applyOpportunity('Frontend Developer Intern')">
+
+                            Apply
+
+                        </button>
+
+                    </div>
+
+                </article>
+
+
+
+                <!-- CARD 2 -->
+
+                <article
+                    class="opportunity-card"
+                    data-type="internship technology"
+                    data-search="python developer internship python programming">
+
+                    <div class="opportunity-top">
+
+                        <div class="company-icon">
+                            🐍
+                        </div>
+
+                        <span class="opportunity-type">
+                            INTERNSHIP
+                        </span>
+
+                    </div>
+
+
+                    <h2>
+                        Python Developer Intern
+                    </h2>
+
+                    <p class="company-name">
+                        CodeWorks
+                    </p>
+
+
+                    <p class="opportunity-description">
+                        Assist with Python development and
+                        build practical software projects.
+                    </p>
+
+
+                    <div class="opportunity-details">
+
+                        <span class="detail-tag">
+                            📍 Hybrid
+                        </span>
+
+                        <span class="detail-tag">
+                            ⏱ 2 Months
+                        </span>
+
+                        <span class="detail-tag">
+                            🐍 Python
+                        </span>
+
+                    </div>
+
+
+                    <div class="opportunity-bottom">
+
+                        <span class="posted-date">
+                            Posted 4 days ago
+                        </span>
+
+                        <button
+                            class="apply-btn"
+                            onclick="applyOpportunity('Python Developer Intern')">
+
+                            Apply
+
+                        </button>
+
+                    </div>
+
+                </article>
+
+
+
+                <!-- CARD 3 -->
+
+                <article
+                    class="opportunity-card"
+                    data-type="part-time remote"
+                    data-search="content writer part time writing">
+
+                    <div class="opportunity-top">
+
+                        <div class="company-icon">
+                            ✍️
+                        </div>
+
+                        <span class="opportunity-type">
+                            PART-TIME
+                        </span>
+
+                    </div>
+
+
+                    <h2>
+                        Student Content Writer
+                    </h2>
+
+                    <p class="company-name">
+                        EduMedia
+                    </p>
+
+
+                    <p class="opportunity-description">
+                        Create educational content and
+                        articles while studying.
+                    </p>
+
+
+                    <div class="opportunity-details">
+
+                        <span class="detail-tag">
+                            📍 Remote
+                        </span>
+
+                        <span class="detail-tag">
+                            ⏱ Flexible
+                        </span>
+
+                        <span class="detail-tag">
+                            ✍️ Writing
+                        </span>
+
+                    </div>
+
+
+                    <div class="opportunity-bottom">
+
+                        <span class="posted-date">
+                            Posted 1 week ago
+                        </span>
+
+                        <button
+                            class="apply-btn"
+                            onclick="applyOpportunity('Student Content Writer')">
+
+                            Apply
+
+                        </button>
+
+                    </div>
+
+                </article>
+
+
+
+                <!-- CARD 4 -->
+
+                <article
+                    class="opportunity-card"
+                    data-type="internship technology"
+                    data-search="ui ux design internship figma">
+
+                    <div class="opportunity-top">
+
+                        <div class="company-icon">
+                            🎨
+                        </div>
+
+                        <span class="opportunity-type">
+                            INTERNSHIP
+                        </span>
+
+                    </div>
+
+
+                    <h2>
+                        UI/UX Design Intern
+                    </h2>
+
+                    <p class="company-name">
+                        Design Studio
+                    </p>
+
+
+                    <p class="opportunity-description">
+                        Create wireframes, prototypes and
+                        user-friendly digital experiences.
+                    </p>
+
+
+                    <div class="opportunity-details">
+
+                        <span class="detail-tag">
+                            📍 Remote
+                        </span>
+
+                        <span class="detail-tag">
+                            ⏱ 3 Months
+                        </span>
+
+                        <span class="detail-tag">
+                            🎨 Figma
+                        </span>
+
+                    </div>
+
+
+                    <div class="opportunity-bottom">
+
+                        <span class="posted-date">
+                            Posted 3 days ago
+                        </span>
+
+                        <button
+                            class="apply-btn"
+                            onclick="applyOpportunity('UI/UX Design Intern')">
+
+                            Apply
+
+                        </button>
+
+                    </div>
+
+                </article>
+
+
+
+                <!-- CARD 5 -->
+
+                <article
+                    class="opportunity-card"
+                    data-type="part-time"
+                    data-search="social media assistant part time marketing">
+
+                    <div class="opportunity-top">
+
+                        <div class="company-icon">
+                            📱
+                        </div>
+
+                        <span class="opportunity-type">
+                            PART-TIME
+                        </span>
+
+                    </div>
+
+
+                    <h2>
+                        Social Media Assistant
+                    </h2>
+
+                    <p class="company-name">
+                        Creative Hub
+                    </p>
+
+
+                    <p class="opportunity-description">
+                        Help manage social media content,
+                        posts and student campaigns.
+                    </p>
+
+
+                    <div class="opportunity-details">
+
+                        <span class="detail-tag">
+                            📍 On-site
+                        </span>
+
+                        <span class="detail-tag">
+                            ⏱ Flexible
+                        </span>
+
+                        <span class="detail-tag">
+                            📱 Marketing
+                        </span>
+
+                    </div>
+
+
+                    <div class="opportunity-bottom">
+
+                        <span class="posted-date">
+                            Posted 5 days ago
+                        </span>
+
+                        <button
+                            class="apply-btn"
+                            onclick="applyOpportunity('Social Media Assistant')">
+
+                            Apply
+
+                        </button>
+
+                    </div>
+
+                </article>
+
+
+
+                <!-- CARD 6 -->
+
+                <article
+                    class="opportunity-card"
+                    data-type="internship remote"
+                    data-search="data analyst internship excel python">
+
+                    <div class="opportunity-top">
+
+                        <div class="company-icon">
+                            📊
+                        </div>
+
+                        <span class="opportunity-type">
+                            INTERNSHIP
+                        </span>
+
+                    </div>
+
+
+                    <h2>
+                        Data Analyst Intern
+                    </h2>
+
+                    <p class="company-name">
+                        DataLab
+                    </p>
+
+
+                    <p class="opportunity-description">
+                        Work with datasets and create useful
+                        insights using data analysis tools.
+                    </p>
+
+
+                    <div class="opportunity-details">
+
+                        <span class="detail-tag">
+                            📍 Remote
+                        </span>
+
+                        <span class="detail-tag">
+                            ⏱ 2 Months
+                        </span>
+
+                        <span class="detail-tag">
+                            📊 Excel / Python
+                        </span>
+
+                    </div>
+
+
+                    <div class="opportunity-bottom">
+
+                        <span class="posted-date">
+                            Posted yesterday
+                        </span>
+
+                        <button
+                            class="apply-btn"
+                            onclick="applyOpportunity('Data Analyst Intern')">
+
+                            Apply
+
+                        </button>
+
+                    </div>
+
+                </article>
+
+
+            </div>
+
+
+
+            <!-- NO RESULTS -->
+
+            <div
+                class="opportunity-no-results"
+                id="opportunityNoResults">
+
+                <h2>
+                    No opportunities found
+                </h2>
+
+                <p>
+                    Try another search or filter.
+                </p>
+
+            </div>
+
+        </section>
+
+
+    </main>
+
+</div>
+
+
+
+<script>
+
+    /* =========================
+       FILTER
+    ========================= */
+
+    function filterOpportunities(type, button) {
+
+        const cards =
+            document.querySelectorAll(
+                ".opportunity-card"
+            );
+
+
+        const buttons =
+            document.querySelectorAll(
+                ".filter-btn"
+            );
+
+
+        buttons.forEach(function(btn) {
+
+            btn.classList.remove("active");
+
+        });
+
+
+        button.classList.add("active");
+
+
+        let count = 0;
+
+
+        cards.forEach(function(card) {
+
+            const cardType =
+                card.getAttribute("data-type");
+
+
+            if (
+                type === "all" ||
+                cardType.includes(type)
+            ) {
+
+                card.style.display = "block";
+
+                count++;
+
+            } else {
+
+                card.style.display = "none";
+
+            }
+
+        });
+
+
+        updateCount(count);
+
+    }
+
+
+
+    /* =========================
+       SEARCH
+    ========================= */
+
+    function searchOpportunities() {
+
+        const search =
+            document
+                .getElementById("opportunitySearch")
+                .value
+                .toLowerCase()
+                .trim();
+
+
+        const cards =
+            document.querySelectorAll(
+                ".opportunity-card"
+            );
+
+
+        let count = 0;
+
+
+        cards.forEach(function(card) {
+
+            const content =
+                card
+                    .getAttribute("data-search")
+                    .toLowerCase();
+
+
+            if (
+                content.includes(search)
+            ) {
+
+                card.style.display = "block";
+
+                count++;
+
+            } else {
+
+                card.style.display = "none";
+
+            }
+
+        });
+
+
+        updateCount(count);
+
+    }
+
+
+
+    /* =========================
+       COUNT
+    ========================= */
+
+    function updateCount(count) {
+
+        document.getElementById(
+            "opportunityCount"
+        ).textContent =
+            count + " opportunities";
+
+
+        document.getElementById(
+            "opportunityNoResults"
+        ).style.display =
+            count === 0
+                ? "block"
+                : "none";
+
+    }
+
+
+
+    /* =========================
+       APPLY
+    ========================= */
+
+    function applyOpportunity(role) {
+
+        alert(
+            "Application for " +
+            role +
+            " will be connected to the application system later."
+        );
+
+    }
+
+
+
+    /* =========================
+       ENTER KEY
+    ========================= */
+
+    document
+        .getElementById("opportunitySearch")
+        .addEventListener(
+            "keypress",
+            function(event) {
+
+                if (event.key === "Enter") {
+
+                    searchOpportunities();
+
+                }
+
+            }
+        );
+
+</script>
+
+
+</body>
+
+</html>

@@ -1,0 +1,641 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Sign Up | Learnova</title>
+
+    <link rel="stylesheet"
+          href="../css/style.css">
+
+    <style>
+
+        .auth-page {
+            min-height: calc(100vh - 72px);
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            padding: 45px 20px;
+
+            background:
+                radial-gradient(
+                    circle at 80% 20%,
+                    rgba(99,91,255,0.08),
+                    transparent 30%
+                ),
+                #f8f9fd;
+        }
+
+
+        .signup-container {
+            width: 100%;
+            max-width: 1050px;
+
+            display: grid;
+            grid-template-columns: 0.9fr 1.1fr;
+
+            background: white;
+
+            border: 1px solid #e7e9f0;
+
+            border-radius: 22px;
+
+            overflow: hidden;
+
+            box-shadow:
+                0 20px 60px rgba(35,40,70,0.10);
+        }
+
+
+        /* LEFT */
+
+        .signup-info {
+            padding: 55px 45px;
+
+            background:
+                linear-gradient(
+                    145deg,
+                    #635bff,
+                    #7b74ff
+                );
+
+            color: white;
+
+            display: flex;
+
+            flex-direction: column;
+
+            justify-content: center;
+        }
+
+
+        .signup-info h1 {
+            font-size: 36px;
+
+            line-height: 1.15;
+
+            margin-bottom: 18px;
+        }
+
+
+        .signup-info p {
+            color: rgba(255,255,255,0.82);
+
+            font-size: 14px;
+
+            line-height: 1.8;
+        }
+
+
+        .signup-info .big-icon {
+            font-size: 55px;
+
+            margin-bottom: 25px;
+        }
+
+
+        /* FORM */
+
+        .signup-form {
+            padding: 45px 50px;
+        }
+
+
+        .signup-form h2 {
+            font-size: 28px;
+
+            margin-bottom: 7px;
+        }
+
+
+        .signup-subtitle {
+            color: #697386;
+
+            font-size: 13px;
+
+            margin-bottom: 25px;
+        }
+
+
+        .form-row {
+            display: grid;
+
+            grid-template-columns: 1fr 1fr;
+
+            gap: 15px;
+        }
+
+
+        .form-group {
+            margin-bottom: 16px;
+        }
+
+
+        .form-group label {
+            display: block;
+
+            font-size: 13px;
+
+            font-weight: 600;
+
+            margin-bottom: 7px;
+        }
+
+
+        .form-group input,
+        .form-group select {
+            width: 100%;
+
+            padding: 11px 12px;
+
+            border: 1px solid #dfe2ea;
+
+            border-radius: 8px;
+
+            outline: none;
+
+            font-family: inherit;
+
+            font-size: 13px;
+
+            background: white;
+        }
+
+
+        .form-group input:focus,
+        .form-group select:focus {
+            border-color: #635bff;
+
+            box-shadow:
+                0 0 0 3px rgba(99,91,255,0.08);
+        }
+
+
+        .terms {
+            display: flex;
+
+            gap: 8px;
+
+            align-items: flex-start;
+
+            margin: 8px 0 20px;
+
+            color: #697386;
+
+            font-size: 11px;
+        }
+
+
+        .terms input {
+            margin-top: 2px;
+        }
+
+
+        .create-button {
+            width: 100%;
+
+            padding: 13px;
+
+            border: none;
+
+            border-radius: 9px;
+
+            background: #635bff;
+
+            color: white;
+
+            font-size: 14px;
+
+            font-weight: 600;
+
+            cursor: pointer;
+
+            transition: 0.25s;
+        }
+
+
+        .create-button:hover {
+            background: #5148e8;
+
+            transform: translateY(-1px);
+        }
+
+
+        .auth-switch {
+            text-align: center;
+
+            margin-top: 20px;
+
+            color: #697386;
+
+            font-size: 13px;
+        }
+
+
+        .auth-switch a {
+            color: #635bff;
+
+            font-weight: 600;
+
+            text-decoration: none;
+        }
+
+
+        .back-home {
+            text-align: center;
+
+            margin-top: 12px;
+
+            font-size: 12px;
+        }
+
+
+        .back-home a {
+            color: #697386;
+
+            text-decoration: none;
+        }
+
+
+        @media (max-width: 750px) {
+
+            .signup-container {
+                grid-template-columns: 1fr;
+            }
+
+            .signup-info {
+                display: none;
+            }
+
+            .signup-form {
+                padding: 40px 25px;
+            }
+
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <!-- NAVIGATION -->
+
+    <header class="navbar">
+
+        <a href="../index.html"
+           class="logo"
+           style="text-decoration:none;">
+
+            <span class="logo-icon">
+                L
+            </span>
+
+            <span class="logo-text">
+                Learnova
+            </span>
+
+        </a>
+
+
+        <div class="nav-actions">
+
+            <a href="login.html"
+               style="text-decoration:none;">
+
+                <button class="login-btn">
+                    Login
+                </button>
+
+            </a>
+
+        </div>
+
+    </header>
+
+
+    <!-- SIGN UP -->
+
+    <main class="auth-page">
+
+        <div class="signup-container">
+
+
+            <!-- LEFT -->
+
+            <section class="signup-info">
+
+                <div class="big-icon">
+                    🎓
+                </div>
+
+
+                <h1>
+                    Start your
+                    Learnova journey.
+                </h1>
+
+
+                <p>
+                    Create your student account and
+                    explore a community built around
+                    learning, sharing and opportunities.
+                </p>
+
+            </section>
+
+
+            <!-- FORM -->
+
+            <section class="signup-form">
+
+                <h2>
+                    Create Account
+                </h2>
+
+
+                <p class="signup-subtitle">
+                    Fill in your details to get started.
+                </p>
+
+
+                <form id="signupForm">
+
+
+                    <div class="form-row">
+
+                        <div class="form-group">
+
+                            <label for="firstName">
+                                First Name
+                            </label>
+
+                            <input
+                                type="text"
+                                id="firstName"
+                                placeholder="First name"
+                                required
+                            >
+
+                        </div>
+
+
+                        <div class="form-group">
+
+                            <label for="lastName">
+                                Last Name
+                            </label>
+
+                            <input
+                                type="text"
+                                id="lastName"
+                                placeholder="Last name"
+                                required
+                            >
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="signupEmail">
+                            Email Address
+                        </label>
+
+                        <input
+                            type="email"
+                            id="signupEmail"
+                            placeholder="you@example.com"
+                            required
+                        >
+
+                    </div>
+
+
+                    <div class="form-row">
+
+                        <div class="form-group">
+
+                            <label for="course">
+                                Course
+                            </label>
+
+                            <input
+                                type="text"
+                                id="course"
+                                placeholder="e.g. Computer Science"
+                                required
+                            >
+
+                        </div>
+
+
+                        <div class="form-group">
+
+                            <label for="year">
+                                Year of Study
+                            </label>
+
+                            <select id="year" required>
+
+                                <option value="">
+                                    Select year
+                                </option>
+
+                                <option>
+                                    1st Year
+                                </option>
+
+                                <option>
+                                    2nd Year
+                                </option>
+
+                                <option>
+                                    3rd Year
+                                </option>
+
+                                <option>
+                                    4th Year
+                                </option>
+
+                            </select>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="form-row">
+
+                        <div class="form-group">
+
+                            <label for="signupPassword">
+                                Password
+                            </label>
+
+                            <input
+                                type="password"
+                                id="signupPassword"
+                                placeholder="Create password"
+                                required
+                            >
+
+                        </div>
+
+
+                        <div class="form-group">
+
+                            <label for="confirmPassword">
+                                Confirm Password
+                            </label>
+
+                            <input
+                                type="password"
+                                id="confirmPassword"
+                                placeholder="Confirm password"
+                                required
+                            >
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="role">
+                            I want to
+                        </label>
+
+                        <select id="role" required>
+
+                            <option value="">
+                                Select an option
+                            </option>
+
+                            <option>
+                                Learn & Explore
+                            </option>
+
+                            <option>
+                                Teach & Share
+                            </option>
+
+                            <option>
+                                Both Learn & Teach
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+                    <label class="terms">
+
+                        <input
+                            type="checkbox"
+                            required
+                        >
+
+                        <span>
+                            I agree to the Learnova
+                            Terms of Service and
+                            Privacy Policy.
+                        </span>
+
+                    </label>
+
+
+                    <button
+                        type="submit"
+                        class="create-button">
+
+                        Create Account
+
+                    </button>
+
+
+                </form>
+
+
+                <p class="auth-switch">
+
+                    Already have an account?
+
+                    <a href="login.html">
+                        Login
+                    </a>
+
+                </p>
+
+
+                <div class="back-home">
+
+                    <a href="../index.html">
+                        ← Back to Home
+                    </a>
+
+                </div>
+
+            </section>
+
+        </div>
+
+    </main>
+
+
+    <script>
+
+        document
+            .getElementById("signupForm")
+            .addEventListener("submit", function(event) {
+
+                event.preventDefault();
+
+                const password =
+                    document.getElementById(
+                        "signupPassword"
+                    ).value;
+
+                const confirmPassword =
+                    document.getElementById(
+                        "confirmPassword"
+                    ).value;
+
+
+                if (password !== confirmPassword) {
+
+                    alert(
+                        "Passwords do not match."
+                    );
+
+                    return;
+                }
+
+
+                alert(
+                    "Account creation will be connected to the backend later."
+                );
+
+            });
+
+    </script>
+
+
+</body>
+
+</html>

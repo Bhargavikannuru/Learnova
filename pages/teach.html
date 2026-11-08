@@ -1,0 +1,1390 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Teach | Learnova</title>
+
+    <link rel="stylesheet"
+          href="../css/style.css">
+
+    <style>
+
+        /* =========================
+           PAGE
+        ========================= */
+
+        .teach-page {
+            min-height: 100vh;
+            background: #f8f9fd;
+        }
+
+
+        /* =========================
+           NAVBAR
+        ========================= */
+
+        .teach-nav {
+            height: 72px;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            padding: 0 7%;
+
+            background: white;
+
+            border-bottom: 1px solid #e8eaf0;
+        }
+
+
+        .teach-logo {
+            display: flex;
+            align-items: center;
+
+            gap: 10px;
+
+            text-decoration: none;
+
+            color: #172033;
+
+            font-size: 17px;
+            font-weight: 700;
+        }
+
+
+        .teach-logo-icon {
+            width: 36px;
+            height: 36px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            background: #635bff;
+
+            color: white;
+
+            border-radius: 10px;
+        }
+
+
+        .teach-nav-links {
+            display: flex;
+
+            align-items: center;
+
+            gap: 25px;
+        }
+
+
+        .teach-nav-links a {
+            text-decoration: none;
+
+            color: #697386;
+
+            font-size: 13px;
+        }
+
+
+        .teach-nav-links a.active {
+            color: #635bff;
+
+            font-weight: 600;
+        }
+
+
+        .teach-profile {
+            width: 36px;
+            height: 36px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            border-radius: 50%;
+
+            background: #635bff;
+
+            color: white;
+
+            font-size: 13px;
+            font-weight: 600;
+        }
+
+
+        /* =========================
+           CONTENT
+        ========================= */
+
+        .teach-content {
+            width: 86%;
+            max-width: 1250px;
+
+            margin: auto;
+
+            padding: 45px 0;
+        }
+
+
+        /* =========================
+           HERO
+        ========================= */
+
+        .teach-hero {
+            display: flex;
+
+            align-items: center;
+            justify-content: space-between;
+
+            gap: 40px;
+
+            margin-bottom: 45px;
+        }
+
+
+        .teach-hero-text {
+            max-width: 650px;
+        }
+
+
+        .teach-label {
+            color: #635bff;
+
+            font-size: 11px;
+
+            font-weight: 700;
+
+            letter-spacing: 1.5px;
+
+            margin-bottom: 10px;
+        }
+
+
+        .teach-hero h1 {
+            margin: 0 0 12px;
+
+            color: #172033;
+
+            font-size: 34px;
+
+            line-height: 1.2;
+        }
+
+
+        .teach-hero h1 span {
+            color: #635bff;
+        }
+
+
+        .teach-hero p {
+            color: #697386;
+
+            font-size: 14px;
+
+            line-height: 1.7;
+
+            margin-bottom: 22px;
+        }
+
+
+        .become-tutor-btn {
+            border: none;
+
+            background: #635bff;
+
+            color: white;
+
+            padding: 12px 20px;
+
+            border-radius: 8px;
+
+            cursor: pointer;
+
+            font-size: 12px;
+
+            font-weight: 600;
+        }
+
+
+        .teach-illustration {
+            width: 280px;
+            height: 210px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            background: #efeeff;
+
+            border-radius: 25px;
+
+            font-size: 75px;
+        }
+
+
+        /* =========================
+           SEARCH
+        ========================= */
+
+        .teach-search {
+            display: flex;
+
+            align-items: center;
+
+            gap: 10px;
+
+            background: white;
+
+            border: 1px solid #e1e4ec;
+
+            border-radius: 11px;
+
+            padding: 5px;
+
+            margin-bottom: 35px;
+        }
+
+
+        .teach-search input {
+            flex: 1;
+
+            border: none;
+
+            outline: none;
+
+            padding: 12px;
+
+            font-family: inherit;
+
+            font-size: 13px;
+        }
+
+
+        .teach-search button {
+            border: none;
+
+            background: #635bff;
+
+            color: white;
+
+            padding: 11px 20px;
+
+            border-radius: 8px;
+
+            cursor: pointer;
+
+            font-weight: 600;
+        }
+
+
+        /* =========================
+           SECTION HEADER
+        ========================= */
+
+        .section-heading {
+            display: flex;
+
+            align-items: center;
+            justify-content: space-between;
+
+            margin-bottom: 18px;
+        }
+
+
+        .section-heading h2 {
+            margin: 0;
+
+            font-size: 20px;
+
+            color: #172033;
+        }
+
+
+        .section-heading span {
+            color: #8992a3;
+
+            font-size: 12px;
+        }
+
+
+        /* =========================
+           SUBJECTS
+        ========================= */
+
+        .subject-grid {
+            display: grid;
+
+            grid-template-columns:
+                repeat(5, 1fr);
+
+            gap: 12px;
+
+            margin-bottom: 42px;
+        }
+
+
+        .subject-card {
+            background: white;
+
+            border: 1px solid #e3e6ee;
+
+            border-radius: 12px;
+
+            padding: 18px;
+
+            text-align: center;
+
+            cursor: pointer;
+
+            transition: 0.2s;
+        }
+
+
+        .subject-card:hover {
+            border-color: #635bff;
+
+            transform: translateY(-3px);
+        }
+
+
+        .subject-icon {
+            font-size: 25px;
+
+            margin-bottom: 8px;
+        }
+
+
+        .subject-card h3 {
+            margin: 0;
+
+            color: #172033;
+
+            font-size: 13px;
+        }
+
+
+        .subject-card p {
+            margin: 5px 0 0;
+
+            color: #8992a3;
+
+            font-size: 10px;
+        }
+
+
+        /* =========================
+           TUTOR GRID
+        ========================= */
+
+        .tutor-grid {
+            display: grid;
+
+            grid-template-columns:
+                repeat(3, 1fr);
+
+            gap: 18px;
+        }
+
+
+        .tutor-card {
+            background: white;
+
+            border: 1px solid #e3e6ee;
+
+            border-radius: 14px;
+
+            padding: 22px;
+
+            transition: 0.25s;
+        }
+
+
+        .tutor-card:hover {
+            transform: translateY(-4px);
+
+            box-shadow:
+                0 12px 30px rgba(35,40,70,0.08);
+        }
+
+
+        .tutor-top {
+            display: flex;
+
+            align-items: center;
+
+            gap: 13px;
+
+            margin-bottom: 15px;
+        }
+
+
+        .tutor-avatar {
+            width: 48px;
+            height: 48px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            border-radius: 50%;
+
+            background: #efeeff;
+
+            color: #635bff;
+
+            font-weight: 700;
+        }
+
+
+        .tutor-info h3 {
+            margin: 0 0 4px;
+
+            color: #172033;
+
+            font-size: 15px;
+        }
+
+
+        .tutor-info span {
+            color: #8992a3;
+
+            font-size: 11px;
+        }
+
+
+        .tutor-subject {
+            display: inline-block;
+
+            background: #f0efff;
+
+            color: #635bff;
+
+            padding: 5px 8px;
+
+            border-radius: 5px;
+
+            font-size: 10px;
+
+            font-weight: 600;
+
+            margin-bottom: 10px;
+        }
+
+
+        .tutor-card p {
+            color: #697386;
+
+            font-size: 12px;
+
+            line-height: 1.6;
+
+            margin-bottom: 17px;
+        }
+
+
+        .tutor-bottom {
+            display: flex;
+
+            align-items: center;
+            justify-content: space-between;
+        }
+
+
+        .rating {
+            color: #697386;
+
+            font-size: 11px;
+        }
+
+
+        .connect-btn {
+            border: none;
+
+            background: #635bff;
+
+            color: white;
+
+            padding: 8px 13px;
+
+            border-radius: 7px;
+
+            cursor: pointer;
+
+            font-size: 11px;
+
+            font-weight: 600;
+        }
+
+
+        /* =========================
+           NO RESULTS
+        ========================= */
+
+        .teach-no-results {
+            display: none;
+
+            text-align: center;
+
+            padding: 45px;
+
+            color: #697386;
+        }
+
+
+        /* =========================
+           RESPONSIVE
+        ========================= */
+
+        @media (max-width: 900px) {
+
+            .subject-grid {
+                grid-template-columns:
+                    repeat(3, 1fr);
+            }
+
+            .tutor-grid {
+                grid-template-columns:
+                    repeat(2, 1fr);
+            }
+
+            .teach-nav-links {
+                display: none;
+            }
+
+        }
+
+
+        @media (max-width: 600px) {
+
+            .teach-content {
+                width: 90%;
+            }
+
+            .teach-hero {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .teach-illustration {
+                width: 100%;
+            }
+
+            .subject-grid,
+            .tutor-grid {
+                grid-template-columns: 1fr;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+<div class="teach-page">
+
+
+    <!-- =========================
+         NAVBAR
+    ========================== -->
+
+    <header class="teach-nav">
+
+        <a href="dashboard.html"
+           class="teach-logo">
+
+            <span class="teach-logo-icon">
+                L
+            </span>
+
+            Learnova
+
+        </a>
+
+
+        <nav class="teach-nav-links">
+
+            <a href="dashboard.html">
+                Dashboard
+            </a>
+
+            <a href="learn.html">
+                Learn
+            </a>
+
+            <a href="teach.html"
+               class="active">
+                Teach
+            </a>
+
+            <a href="#">
+                Opportunities
+            </a>
+
+            <a href="#">
+                Marketplace
+            </a>
+
+        </nav>
+
+
+        <div class="teach-profile">
+            S
+        </div>
+
+    </header>
+
+
+
+    <!-- =========================
+         MAIN CONTENT
+    ========================== -->
+
+    <main class="teach-content">
+
+
+        <!-- HERO -->
+
+        <section class="teach-hero">
+
+            <div class="teach-hero-text">
+
+                <div class="teach-label">
+                    SHARE YOUR KNOWLEDGE
+                </div>
+
+                <h1>
+                    Teach what you know.
+                    <span>Help others grow.</span>
+                </h1>
+
+                <p>
+                    Share your skills with fellow students,
+                    become a peer tutor and help others learn
+                    through collaborative education.
+                </p>
+
+                <button
+                    class="become-tutor-btn"
+                    onclick="becomeTutor()">
+
+                    Become a Tutor
+
+                </button>
+
+            </div>
+
+
+            <div class="teach-illustration">
+                👩‍🏫
+            </div>
+
+        </section>
+
+
+
+        <!-- SEARCH -->
+
+        <div class="teach-search">
+
+            <span>
+                🔍
+            </span>
+
+            <input
+                type="text"
+                id="tutorSearch"
+                placeholder="Search tutors by name, subject or skill..."
+            >
+
+            <button onclick="searchTutors()">
+                Search
+            </button>
+
+        </div>
+
+
+
+        <!-- =========================
+             SUBJECTS
+        ========================== -->
+
+        <section>
+
+            <div class="section-heading">
+
+                <h2>
+                    Explore Skills
+                </h2>
+
+                <span>
+                    Find students who can teach you
+                </span>
+
+            </div>
+
+
+            <div class="subject-grid">
+
+
+                <div class="subject-card"
+                     onclick="filterSubject('Programming')">
+
+                    <div class="subject-icon">
+                        💻
+                    </div>
+
+                    <h3>
+                        Programming
+                    </h3>
+
+                    <p>
+                        12 Tutors
+                    </p>
+
+                </div>
+
+
+                <div class="subject-card"
+                     onclick="filterSubject('Mathematics')">
+
+                    <div class="subject-icon">
+                        📐
+                    </div>
+
+                    <h3>
+                        Mathematics
+                    </h3>
+
+                    <p>
+                        8 Tutors
+                    </p>
+
+                </div>
+
+
+                <div class="subject-card"
+                     onclick="filterSubject('English')">
+
+                    <div class="subject-icon">
+                        📖
+                    </div>
+
+                    <h3>
+                        English
+                    </h3>
+
+                    <p>
+                        6 Tutors
+                    </p>
+
+                </div>
+
+
+                <div class="subject-card"
+                     onclick="filterSubject('Design')">
+
+                    <div class="subject-icon">
+                        🎨
+                    </div>
+
+                    <h3>
+                        Design
+                    </h3>
+
+                    <p>
+                        5 Tutors
+                    </p>
+
+                </div>
+
+
+                <div class="subject-card"
+                     onclick="filterSubject('Data Science')">
+
+                    <div class="subject-icon">
+                        📊
+                    </div>
+
+                    <h3>
+                        Data Science
+                    </h3>
+
+                    <p>
+                        7 Tutors
+                    </p>
+
+                </div>
+
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =========================
+             TUTORS
+        ========================== -->
+
+        <section>
+
+            <div class="section-heading">
+
+                <h2>
+                    Peer Tutors
+                </h2>
+
+                <span id="tutorCount">
+                    6 tutors
+                </span>
+
+            </div>
+
+
+            <div
+                class="tutor-grid"
+                id="tutorGrid">
+
+
+                <!-- TUTOR 1 -->
+
+                <article
+                    class="tutor-card"
+                    data-name="Ananya"
+                    data-subject="Programming">
+
+                    <div class="tutor-top">
+
+                        <div class="tutor-avatar">
+                            A
+                        </div>
+
+                        <div class="tutor-info">
+
+                            <h3>
+                                Ananya
+                            </h3>
+
+                            <span>
+                                Computer Science
+                            </span>
+
+                        </div>
+
+                    </div>
+
+
+                    <span class="tutor-subject">
+                        Programming
+                    </span>
+
+
+                    <p>
+                        Helps beginners understand
+                        Python and programming fundamentals.
+                    </p>
+
+
+                    <div class="tutor-bottom">
+
+                        <span class="rating">
+                            ⭐ 4.8
+                        </span>
+
+                        <button
+                            class="connect-btn"
+                            onclick="connectTutor('Ananya')">
+
+                            Connect
+
+                        </button>
+
+                    </div>
+
+                </article>
+
+
+
+                <!-- TUTOR 2 -->
+
+                <article
+                    class="tutor-card"
+                    data-name="Rahul"
+                    data-subject="Mathematics">
+
+                    <div class="tutor-top">
+
+                        <div class="tutor-avatar">
+                            R
+                        </div>
+
+                        <div class="tutor-info">
+
+                            <h3>
+                                Rahul
+                            </h3>
+
+                            <span>
+                                Mathematics
+                            </span>
+
+                        </div>
+
+                    </div>
+
+
+                    <span class="tutor-subject">
+                        Mathematics
+                    </span>
+
+
+                    <p>
+                        Provides easy explanations for
+                        mathematics and problem solving.
+                    </p>
+
+
+                    <div class="tutor-bottom">
+
+                        <span class="rating">
+                            ⭐ 4.7
+                        </span>
+
+                        <button
+                            class="connect-btn"
+                            onclick="connectTutor('Rahul')">
+
+                            Connect
+
+                        </button>
+
+                    </div>
+
+                </article>
+
+
+
+                <!-- TUTOR 3 -->
+
+                <article
+                    class="tutor-card"
+                    data-name="Priya"
+                    data-subject="Design">
+
+                    <div class="tutor-top">
+
+                        <div class="tutor-avatar">
+                            P
+                        </div>
+
+                        <div class="tutor-info">
+
+                            <h3>
+                                Priya
+                            </h3>
+
+                            <span>
+                                UI/UX Design
+                            </span>
+
+                        </div>
+
+                    </div>
+
+
+                    <span class="tutor-subject">
+                        Design
+                    </span>
+
+
+                    <p>
+                        Teaches UI/UX basics, wireframes
+                        and design principles.
+                    </p>
+
+
+                    <div class="tutor-bottom">
+
+                        <span class="rating">
+                            ⭐ 4.9
+                        </span>
+
+                        <button
+                            class="connect-btn"
+                            onclick="connectTutor('Priya')">
+
+                            Connect
+
+                        </button>
+
+                    </div>
+
+                </article>
+
+
+
+                <!-- TUTOR 4 -->
+
+                <article
+                    class="tutor-card"
+                    data-name="Kiran"
+                    data-subject="Data Science">
+
+                    <div class="tutor-top">
+
+                        <div class="tutor-avatar">
+                            K
+                        </div>
+
+                        <div class="tutor-info">
+
+                            <h3>
+                                Kiran
+                            </h3>
+
+                            <span>
+                                Computer Science
+                            </span>
+
+                        </div>
+
+                    </div>
+
+
+                    <span class="tutor-subject">
+                        Data Science
+                    </span>
+
+
+                    <p>
+                        Helps students learn Python,
+                        data analysis and basic ML.
+                    </p>
+
+
+                    <div class="tutor-bottom">
+
+                        <span class="rating">
+                            ⭐ 4.6
+                        </span>
+
+                        <button
+                            class="connect-btn"
+                            onclick="connectTutor('Kiran')">
+
+                            Connect
+
+                        </button>
+
+                    </div>
+
+                </article>
+
+
+
+                <!-- TUTOR 5 -->
+
+                <article
+                    class="tutor-card"
+                    data-name="Sneha"
+                    data-subject="English">
+
+                    <div class="tutor-top">
+
+                        <div class="tutor-avatar">
+                            S
+                        </div>
+
+                        <div class="tutor-info">
+
+                            <h3>
+                                Sneha
+                            </h3>
+
+                            <span>
+                                English
+                            </span>
+
+                        </div>
+
+                    </div>
+
+
+                    <span class="tutor-subject">
+                        English
+                    </span>
+
+
+                    <p>
+                        Helps students improve communication,
+                        vocabulary and presentation skills.
+                    </p>
+
+
+                    <div class="tutor-bottom">
+
+                        <span class="rating">
+                            ⭐ 4.8
+                        </span>
+
+                        <button
+                            class="connect-btn"
+                            onclick="connectTutor('Sneha')">
+
+                            Connect
+
+                        </button>
+
+                    </div>
+
+                </article>
+
+
+
+                <!-- TUTOR 6 -->
+
+                <article
+                    class="tutor-card"
+                    data-name="Arjun"
+                    data-subject="Programming">
+
+                    <div class="tutor-top">
+
+                        <div class="tutor-avatar">
+                            A
+                        </div>
+
+                        <div class="tutor-info">
+
+                            <h3>
+                                Arjun
+                            </h3>
+
+                            <span>
+                                Computer Science
+                            </span>
+
+                        </div>
+
+                    </div>
+
+
+                    <span class="tutor-subject">
+                        Programming
+                    </span>
+
+
+                    <p>
+                        Teaches Java, data structures
+                        and coding fundamentals.
+                    </p>
+
+
+                    <div class="tutor-bottom">
+
+                        <span class="rating">
+                            ⭐ 4.7
+                        </span>
+
+                        <button
+                            class="connect-btn"
+                            onclick="connectTutor('Arjun')">
+
+                            Connect
+
+                        </button>
+
+                    </div>
+
+                </article>
+
+
+            </div>
+
+
+            <div
+                class="teach-no-results"
+                id="teachNoResults">
+
+                <h3>
+                    No tutors found
+                </h3>
+
+                <p>
+                    Try searching for another subject or skill.
+                </p>
+
+            </div>
+
+        </section>
+
+
+    </main>
+
+</div>
+
+
+
+<script>
+
+    /* =========================
+       SEARCH TUTORS
+    ========================= */
+
+    function searchTutors() {
+
+        const search =
+            document
+                .getElementById("tutorSearch")
+                .value
+                .toLowerCase()
+                .trim();
+
+
+        const tutors =
+            document.querySelectorAll(
+                ".tutor-card"
+            );
+
+
+        let count = 0;
+
+
+        tutors.forEach(function(tutor) {
+
+            const name =
+                tutor
+                    .getAttribute("data-name")
+                    .toLowerCase();
+
+            const subject =
+                tutor
+                    .getAttribute("data-subject")
+                    .toLowerCase();
+
+            const content =
+                tutor.textContent
+                    .toLowerCase();
+
+
+            if (
+                name.includes(search) ||
+                subject.includes(search) ||
+                content.includes(search)
+            ) {
+
+                tutor.style.display = "block";
+
+                count++;
+
+            } else {
+
+                tutor.style.display = "none";
+
+            }
+
+        });
+
+
+        document.getElementById(
+            "tutorCount"
+        ).textContent =
+            count + " tutors";
+
+
+        document.getElementById(
+            "teachNoResults"
+        ).style.display =
+            count === 0
+                ? "block"
+                : "none";
+
+    }
+
+
+
+    /* =========================
+       FILTER SUBJECT
+    ========================= */
+
+    function filterSubject(subject) {
+
+        document.getElementById(
+            "tutorSearch"
+        ).value = subject;
+
+        searchTutors();
+
+        window.scrollTo({
+            top: 650,
+            behavior: "smooth"
+        });
+
+    }
+
+
+
+    /* =========================
+       CONNECT TUTOR
+    ========================= */
+
+    function connectTutor(name) {
+
+        alert(
+            "Connection request sent to " +
+            name +
+            "!"
+        );
+
+    }
+
+
+
+    /* =========================
+       BECOME A TUTOR
+    ========================= */
+
+    function becomeTutor() {
+
+        alert(
+            "Tutor registration will be available here."
+        );
+
+    }
+
+
+
+    /* ENTER KEY */
+
+    document
+        .getElementById("tutorSearch")
+        .addEventListener(
+            "keypress",
+            function(event) {
+
+                if (event.key === "Enter") {
+
+                    searchTutors();
+
+                }
+
+            }
+        );
+
+</script>
+
+
+</body>
+
+</html>

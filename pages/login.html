@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Login | Learnova</title>
+
+    <link rel="stylesheet"
+          href="../css/style.css">
+
+    <style>
+
+        /* =================================
+           LOGIN PAGE
+        ================================= */
+
+        .auth-page {
+            min-height: calc(100vh - 72px);
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            padding: 50px 20px;
+
+            background:
+                radial-gradient(
+                    circle at 20% 20%,
+                    rgba(99, 91, 255, 0.08),
+                    transparent 30%
+                ),
+                #f8f9fd;
+        }
+
+
+        .auth-container {
+            width: 100%;
+            max-width: 1000px;
+
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+
+            background: white;
+
+            border: 1px solid #e7e9f0;
+
+            border-radius: 22px;
+
+            overflow: hidden;
+
+            box-shadow:
+                0 20px 60px rgba(35, 40, 70, 0.10);
+        }
+
+
+        /* LEFT SIDE */
+
+        .auth-info {
+            padding: 55px 45px;
+
+            background:
+                linear-gradient(
+                    145deg,
+                    #635bff,
+                    #7b74ff
+                );
+
+            color: white;
+
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+
+        .auth-info .logo-small {
+            width: 45px;
+            height: 45px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            background: rgba(255,255,255,0.18);
+
+            border-radius: 12px;
+
+            font-size: 20px;
+            font-weight: 700;
+
+            margin-bottom: 30px;
+        }
+
+
+        .auth-info h1 {
+            font-size: 36px;
+
+            line-height: 1.15;
+
+            margin-bottom: 18px;
+        }
+
+
+        .auth-info p {
+            color: rgba(255,255,255,0.82);
+
+            font-size: 14px;
+
+            line-height: 1.8;
+        }
+
+
+        .auth-points {
+            margin-top: 30px;
+
+            display: flex;
+            flex-direction: column;
+
+            gap: 14px;
+        }
+
+
+        .auth-point {
+            display: flex;
+
+            align-items: center;
+
+            gap: 10px;
+
+            font-size: 13px;
+        }
+
+
+        /* RIGHT SIDE */
+
+        .auth-form {
+            padding: 55px 50px;
+
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+
+        .auth-form h2 {
+            font-size: 28px;
+
+            margin-bottom: 8px;
+        }
+
+
+        .auth-subtitle {
+            color: #697386;
+
+            font-size: 13px;
+
+            margin-bottom: 30px;
+        }
+
+
+        .form-group {
+            margin-bottom: 18px;
+        }
+
+
+        .form-group label {
+            display: block;
+
+            font-size: 13px;
+
+            font-weight: 600;
+
+            margin-bottom: 7px;
+        }
+
+
+        .form-group input {
+            width: 100%;
+
+            padding: 12px 13px;
+
+            border: 1px solid #dfe2ea;
+
+            border-radius: 8px;
+
+            outline: none;
+
+            font-family: inherit;
+
+            font-size: 14px;
+
+            transition: 0.2s;
+        }
+
+
+        .form-group input:focus {
+            border-color: #635bff;
+
+            box-shadow:
+                0 0 0 3px rgba(99,91,255,0.08);
+        }
+
+
+        .login-options {
+            display: flex;
+
+            align-items: center;
+            justify-content: space-between;
+
+            margin-bottom: 22px;
+
+            font-size: 12px;
+        }
+
+
+        .remember {
+            display: flex;
+
+            align-items: center;
+
+            gap: 6px;
+
+            color: #697386;
+        }
+
+
+        .forgot-link {
+            color: #635bff;
+
+            cursor: pointer;
+        }
+
+
+        .auth-button {
+            width: 100%;
+
+            padding: 13px;
+
+            border: none;
+
+            border-radius: 9px;
+
+            background: #635bff;
+
+            color: white;
+
+            font-size: 14px;
+
+            font-weight: 600;
+
+            cursor: pointer;
+
+            transition: 0.25s;
+        }
+
+
+        .auth-button:hover {
+            background: #5148e8;
+
+            transform: translateY(-1px);
+        }
+
+
+        .auth-switch {
+            text-align: center;
+
+            margin-top: 22px;
+
+            color: #697386;
+
+            font-size: 13px;
+        }
+
+
+        .auth-switch a {
+            color: #635bff;
+
+            font-weight: 600;
+
+            text-decoration: none;
+        }
+
+
+        .back-home {
+            text-align: center;
+
+            margin-top: 15px;
+
+            font-size: 12px;
+        }
+
+
+        .back-home a {
+            color: #697386;
+
+            text-decoration: none;
+        }
+
+
+        /* RESPONSIVE */
+
+        @media (max-width: 750px) {
+
+            .auth-container {
+                grid-template-columns: 1fr;
+            }
+
+            .auth-info {
+                display: none;
+            }
+
+            .auth-form {
+                padding: 40px 25px;
+            }
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <!-- NAVIGATION -->
+
+    <header class="navbar">
+
+        <a href="../index.html"
+           class="logo"
+           style="text-decoration:none;">
+
+            <span class="logo-icon">L</span>
+
+            <span class="logo-text">
+                Learnova
+            </span>
+
+        </a>
+
+
+        <div class="nav-actions">
+
+            <a href="signup.html"
+               style="text-decoration:none;">
+
+                <button class="signup-btn">
+                    Sign Up
+                </button>
+
+            </a>
+
+        </div>
+
+    </header>
+
+
+    <!-- LOGIN -->
+
+    <main class="auth-page">
+
+        <div class="auth-container">
+
+
+            <!-- LEFT -->
+
+            <section class="auth-info">
+
+                <div class="logo-small">
+                    L
+                </div>
+
+
+                <h1>
+                    Welcome back
+                    to Learnova.
+                </h1>
+
+
+                <p>
+                    Continue your learning journey,
+                    connect with students and discover
+                    new opportunities.
+                </p>
+
+
+                <div class="auth-points">
+
+                    <div class="auth-point">
+                        ✓ Learn new skills
+                    </div>
+
+                    <div class="auth-point">
+                        ✓ Share your knowledge
+                    </div>
+
+                    <div class="auth-point">
+                        ✓ Discover opportunities
+                    </div>
+
+                    <div class="auth-point">
+                        ✓ Connect with students
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- RIGHT -->
+
+            <section class="auth-form">
+
+                <h2>
+                    Login
+                </h2>
+
+                <p class="auth-subtitle">
+                    Enter your details to access your account.
+                </p>
+
+
+                <form id="loginForm">
+
+
+                    <div class="form-group">
+
+                        <label for="email">
+                            Email Address
+                        </label>
+
+                        <input
+                            type="email"
+                            id="email"
+                            placeholder="you@example.com"
+                            required
+                        >
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="password">
+                            Password
+                        </label>
+
+                        <input
+                            type="password"
+                            id="password"
+                            placeholder="Enter your password"
+                            required
+                        >
+
+                    </div>
+
+
+                    <div class="login-options">
+
+                        <label class="remember">
+
+                            <input type="checkbox">
+
+                            Remember me
+
+                        </label>
+
+
+                        <span class="forgot-link">
+                            Forgot password?
+                        </span>
+
+                    </div>
+
+
+                    <button
+                        type="submit"
+                        class="auth-button">
+
+                        Login
+
+                    </button>
+
+                </form>
+
+
+                <p class="auth-switch">
+
+                    Don't have an account?
+
+                    <a href="signup.html">
+                        Create one
+                    </a>
+
+                </p>
+
+
+                <div class="back-home">
+
+                    <a href="../index.html">
+                        ← Back to Home
+                    </a>
+
+                </div>
+
+            </section>
+
+        </div>
+
+    </main>
+<script>
+document.getElementById("loginForm").addEventListener("submit", function(event) {
+    event.preventDefault();
+
+    const email = document.getElementById("email").value.trim();
+    const password = document.getElementById("password").value;
+
+    if (email && password) {
+        alert("Login successful! Welcome to Learnova.");
+
+        window.location.href = "dashboard.html";
+    }
+});
+</script>
+
+
+</body>
+
+</html>
